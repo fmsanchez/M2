@@ -1,4 +1,7 @@
-package edu.gatech.oad.antlab.person;
+// package edu.gatech.oad.antlab.person;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Collections;
 
 /**
  *  A simple class for person 2
@@ -30,8 +33,22 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+
+		if (input == null) {
+			throw new IllegalArgumentException();
+		}
+		if (input.equals("")) {
+			return "";
+		}
+
+		List<String> chrs = Arrays.asList(input.split(""));
+		Collections.shuffle(chrs);
+		String shuffled = "";
+		for (String chr : chrs) {
+			shuffled += chr;
+		}
+
+		return shuffled;
 	}
 	/**
 	 * Return a string rep of this object
