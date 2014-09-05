@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+defaultTasks 'jar'
+
+compileJava {
+	source = files("src")
+	destinationDir = file("build")	
+}
+
+task compileTest(type: JavaCompile) {
+	source = file("unit")
+	destinationDir = file("build")
+}
+
+javadoc {
+	destinationDir = file("doc/javadoc")
+}
+
+clean {
+	//dir = file("build")
+}
+
+jar {
+	baseName = 'M2'
+	manifest {
+		attributes("Class-Path": "lib/resources.jar")
+	}
+}
+
+dependencies {
+	compile files("lib/resources.jar")
+}
