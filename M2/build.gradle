@@ -3,17 +3,13 @@ apply plugin: 'java'
 defaultTasks 'jar'
 
 compileJava {
-	source = files("src")
-	destinationDir = file("build")	
 }
 
-task compileTest(type: JavaCompile) {
-	source = file("unit")
-	destinationDir = file("build")
+compileTestJava {
 }
 
 javadoc {
-	destinationDir = file("doc/javadoc")
+	source = sourceSets.main.allJava
 }
 
 clean {
