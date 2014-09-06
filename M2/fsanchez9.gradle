@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+    compileJava {
+
+    }
+    compileTestJava {
+
+    }
+    javadoc {
+
+    }
+    clean {
+
+    }
+    jar {
+    
+    }
